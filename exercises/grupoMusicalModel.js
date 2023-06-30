@@ -16,5 +16,46 @@
 // Otros: no debe generar automáticamente los campos createdAt y updatedAt
 
 // Recuerda realizar la importación correspondiente para poder establercer los tipos de datos.
+const { DataTypes } = require('sequelize');
 
-module.exports = (sequelize) => {};
+module.exports = (sequelize) => {
+    const GrupoMusical = sequelize.define('GrupoMusical', {
+        id: {
+          type: DataTypes.INTEGER,
+          primaryKey: true,
+          autoIncrement: true
+        },
+        nombre: {
+          type: DataTypes.STRING,
+          allowNull: false
+        },
+        genero: {
+          type: DataTypes.STRING,
+          allowNull: true
+        },
+        numeroIntegrantes: {
+          type: DataTypes.INTEGER,
+          allowNull: true,
+          validate: {
+            min: 1
+          }
+        },
+        fechaFormacion: {
+          type: DataTypes.DATEONLY,
+          allowNull: true
+        },
+        discografia: {
+          type: DataTypes.STRING,
+          allowNull: true
+        },
+        activo: {
+          type: DataTypes.BOOLEAN,
+          allowNull: false,
+          defaultValue: true
+        }
+      }, {
+        timestamps: false
+      });
+    
+      return GrupoMusical;
+};

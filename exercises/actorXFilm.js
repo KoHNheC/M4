@@ -9,5 +9,10 @@
 // Documentación con la que puedes guiarte: https://sequelize.org/docs/v6/core-concepts/assocs/
 
 module.exports = (sequelize) => {
-  // Tu código aquí
+  const Actor = sequelize.models.Actor;
+  const Film = sequelize.models.Film;
+
+  Actor.belongsToMany(Film, { through: 'ActorxFilm' });
+  Film.belongsToMany(Actor, { through: 'ActorxFilm' });
+  
 };

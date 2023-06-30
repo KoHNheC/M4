@@ -28,5 +28,13 @@
 const { Op } = require("sequelize");
 
 module.exports = async (Student) => {
-  // Tu código aquí
+  const students = await Student.findAll({
+    where: {
+      age: {
+        [Op.gt]: 20
+      }
+    }
+  });
+
+  return students;
 };

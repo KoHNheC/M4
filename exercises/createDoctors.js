@@ -12,5 +12,6 @@
 // Documentación con la que puedes guiarte: https://sequelize.org/docs/v6/core-concepts/model-querying-basics/
 
 module.exports = async (sequelize, doctors) => {
-  // Tu código aquí...
+  const Doctor = sequelize.models.Doctor;
+  await Doctor.bulkCreate(doctors);
 };
