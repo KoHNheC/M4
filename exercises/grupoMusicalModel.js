@@ -19,43 +19,43 @@
 const { DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {
-    const GrupoMusical = sequelize.define('GrupoMusical', {
-        id: {
-          type: DataTypes.INTEGER,
-          primaryKey: true,
-          autoIncrement: true
-        },
-        nombre: {
-          type: DataTypes.STRING,
-          allowNull: false
-        },
-        genero: {
-          type: DataTypes.STRING,
-          allowNull: true
-        },
-        numeroIntegrantes: {
-          type: DataTypes.INTEGER,
-          allowNull: true,
-          validate: {
-            min: 1
-          }
-        },
-        fechaFormacion: {
-          type: DataTypes.DATEONLY,
-          allowNull: true
-        },
-        discografia: {
-          type: DataTypes.STRING,
-          allowNull: true
-        },
-        activo: {
-          type: DataTypes.BOOLEAN,
-          allowNull: false,
-          defaultValue: true
-        }
-      }, {
-        timestamps: false
-      });
-    
-      return GrupoMusical;
+  const GrupoMusical = sequelize.define('GrupoMusical', {
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+    },
+    nombre: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    genero: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    numeroIntegrantes: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      validate: {
+        min: 1,
+      },
+    },
+    fechaFormacion: {
+      type: DataTypes.DATEONLY,
+      allowNull: true,
+    },
+    discografia: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    activo: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: true,
+      allowNull: false,
+    },
+  }, {
+    timestamps: false, // Para evitar la generación automática de campos createdAt y updatedAt
+  });
+
+  return GrupoMusical;
 };

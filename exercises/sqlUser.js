@@ -10,13 +10,13 @@
 // QUERY_1 => Una Query que cree la tabla "users" con los siguientes campos:
 //  - id: de tipo INTEGER y es una PRIMARY KEY
 //  - name: de tipo TEXT
-const QUERY_1 = "CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT);"; // <= Tu query en este String;
+const QUERY_1 = "CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT);";
 
 // QUERY_2 => Una Query que inserte en la tabla "users" un registro con id=14 y name='Kate Bishop'
-const QUERY_2 = "INSERT INTO users (id, name) VALUES (14, 'Kate Bishop');"; // <= Tu query en este String;
+const QUERY_2 = "INSERT INTO users (id, name) VALUES (14, 'Kate Bishop');";
 
 // QUERY_3 => Una Query que obtenga todos los campos de todos los registros de la tabla "users"
-const QUERY_3 = "SELECT * FROM users;"; // <= Tu query en este String;
+const QUERY_3 = "SELECT * FROM users;";
 
 // *** NO MODIFIQUES NADA POR DEBAJO DE ESTA LÍNEA ***
 

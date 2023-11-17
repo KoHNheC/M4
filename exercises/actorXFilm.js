@@ -12,7 +12,17 @@ module.exports = (sequelize) => {
   const Actor = sequelize.models.Actor;
   const Film = sequelize.models.Film;
 
-  Actor.belongsToMany(Film, { through: 'ActorxFilm' });
-  Film.belongsToMany(Actor, { through: 'ActorxFilm' });
-  
+  Actor.belongsToMany(Film, {
+    through: 'ActorxFilm',
+    foreignKey: 'actorId',
+    otherKey: 'filmId',
+    as: 'Films' // Aseguramos que el alias coincida con el usado en el test
+  });
+
+  Film.belongsToMany(Actor, {
+    through: 'ActorxFilm',
+    foreignKey: 'filmId',
+    otherKey: 'actorId',
+    as: 'Actors' // Aseguramos que el alias coincida con el usado en el test
+  });
 };

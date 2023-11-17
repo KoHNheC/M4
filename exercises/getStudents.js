@@ -28,13 +28,13 @@
 const { Op } = require("sequelize");
 
 module.exports = async (Student) => {
-  const students = await Student.findAll({
+  const studentsAbove20 = await Student.findAll({
     where: {
       age: {
-        [Op.gt]: 20
-      }
-    }
+        [Op.gt]: 20,
+      },
+    },
   });
 
-  return students;
+  return studentsAbove20;
 };
